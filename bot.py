@@ -14,6 +14,6 @@ async def on_message(message): #on new message
                         await message.channel.send("[" + output + "]")
                 print(message.content.split("!exec ")[1] + " | Executed by " + message.author.name) #at least log the commands since I haven't implemented any password protection
 try:
-        client.run(os.getenv("TOKEN")) #don't forget to configure token env variable in heroku project settings, it is unsecure to have it in plaintext
+        client.run(os.environ["TOKEN"]) #don't forget to configure token env variable in heroku project settings, it is unsecure to have it in plaintext
 except Exception as e:
         print(e)
